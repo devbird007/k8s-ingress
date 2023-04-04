@@ -1,0 +1,14 @@
+# For traffic coming from the internet not going through the open route.
+# Configure an error service for them.
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: default
+spec:
+  selector:
+    app: default-response-app
+  ports:
+    - protocol: TCP
+      port: *
+      targetPort: 8080
